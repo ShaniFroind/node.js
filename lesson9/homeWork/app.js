@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const productRouter = require('./routes/products');
+const recipeRouter = require('./routers/recipesRouter ');
+const cookiesRouter = require('./routers/cookiesRouter');
+const cakeRouter=require('./routers/cakeRouter')
 const app = express();
 const port = 5000;
 
@@ -10,8 +12,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
-app.use('', productRouter);
-app.use('')
+app.use('cakesRouter',cakeRouter);
+app.use('cookiesRouter',cookiesRouter)
 
 app.listen(port, () => {
     console.log('app is listening on port 5000... ');
